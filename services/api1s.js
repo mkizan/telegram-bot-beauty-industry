@@ -1,29 +1,25 @@
 const { default: axios } = require("axios");
 
 require("dotenv").config();
-const { LOGIN_AUTH_API, PWD_AUTH_API } = process.env;
+const {
+  LOCAL_PORT,
+  DB_NAME_1C,
+  AUTH_1C_ADDRESS,
+  API_1C_ADDRESS,
+  LOGIN_AUTH_API,
+  PWD_AUTH_API,
+} = process.env;
 
-axios.defaults.baseURL = "http://localhost:8580/DB_2024/hs";
+axios.defaults.baseURL = `http://localhost:${LOCAL_PORT}/${DB_NAME_1C}/${AUTH_1C_ADDRESS}`;
 
 const authorization = {
   username: LOGIN_AUTH_API,
   password: PWD_AUTH_API,
 };
 
-const getCard = async (cardNumber) => {
-  try {
-    const response = await axios.get(`/cards/getcard/${cardNumber}`, {
-      auth: authorization,
-    });
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const getAllCards = async () => {
   try {
-    const response = await axios.get("/cards/getcards", {
+    const response = await axios.get(API_1C_ADDRESS, {
       auth: authorization,
     });
     return response.data.cards;
@@ -32,6 +28,4 @@ const getAllCards = async () => {
   }
 };
 
-module.exports = { getCard, getAllCards };
-
-// const myCards = JSON.parse(fs.readFileSync("./getCards.json", "utf8")).cards;
+module.exports = { getAllCards };
