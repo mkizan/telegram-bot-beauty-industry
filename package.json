@@ -1,0 +1,30 @@
+{
+  "name": "telegrambot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node .server.js",
+    "dev": "cross-env NODE_ENV=development nodemon .server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "bwip-js": "^4.1.2",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "date-fns": "^3.0.6",
+    "dotenv": "^14.2.0",
+    "express": "^4.18.2",
+    "node-telegram-bot-api": "^0.64.0",
+    "sequelize": "^6.35.1",
+    "sqlite3": "^5.1.6",
+    "viber-bot": "^1.0.18"
+  },
+  "devDependencies": {
+    "ngrok": "^5.0.0-beta.2",
+    "nodemon": "^3.0.1"
+  }
+}
