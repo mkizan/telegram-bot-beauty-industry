@@ -92,32 +92,3 @@ app.listen(PORT, () => {
 //     console.log("Can not connect to ngrok server. Is it running?");
 //     console.error(error);
 //   });
-
-// ngrok
-//   .getPublicUrl()
-//   .then((publicUrl) => {
-//     console.log("Set the new webhook to: ", publicUrl);
-//     bot.setWebhook(`${publicUrl}/bot/viber`);
-//   })
-//   .catch((error) => {
-//     console.log("Can not connect to ngrok server. Is it running?");
-//     console.error(error);
-//   });
-
-// http.createServer(bot.middleware()).listen(PORT, () =>
-//   bot.setWebhook(`https://${SERVER_URL}/bot/viber`).catch((error) => {
-//     console.log("Cannot set webhook on following server. Is it running?");
-//     console.error(error);
-//     process.exit(1);
-//   })
-// );
-
-// app.listen(PORT, () => {
-//   // bot.setWebhook(webhookUrl);
-//   console.log(`Server is stending up and listening on port ${PORT}`);
-//   bot.setWebhook(`https://${SERVER_URL}/bot/viber`).catch((error) => {
-//     console.log("Cannot set webhook on following server. Is it running?");
-//     console.error(error);
-//     process.exit(1);
-//   });
-// });
